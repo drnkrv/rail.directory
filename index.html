@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FocalPoint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="aperture-bg" aria-hidden="true">
+  <span class="ring r1"></span>
+  <span class="ring r2"></span>
+  <span class="ring r3"></span>
+</div>
+
+<header class="topbar">
+  <div class="brand" data-nav="home">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" width="22" height="22">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="brand-name">FocalPoint</span>
+  </div>
+  <div class="progress-trail" id="progressTrail" aria-hidden="true">
+    <span class="trail-dot" data-step="1"></span>
+    <span class="trail-dot" data-step="2"></span>
+    <span class="trail-dot" data-step="3"></span>
+    <span class="trail-dot" data-step="4"></span>
+  </div>
+</header>
+
+<main id="app">
+
+  <section class="screen screen--home is-active" data-screen="home" data-step="1">
+    <div class="home-grid">
+      <div class="home-copy">
+        <h1 class="headline">
+          Got questions?<br/>
+          Your <span class="accent-word">community</span> has answers.
+        </h1>
+        <p class="subhead">Know who to go to, what to fill out, and what happens next. All in one place.</p>
+        <button class="btn btn--primary" data-nav="employment-type">
+          Start
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="home-cards">
+        <article class="walk-card">
+          <span class="walk-card__index">Find</span>
+          <h3>Find your concern</h3>
+          <p>Browse the directory to see who handles your specific concern.</p>
+        </article>
+        <article class="walk-card">
+          <span class="walk-card__index">Meet</span>
+          <h3>Meet the focal person</h3>
+          <p>See exactly who handles it, their contact details, and reach out directly.</p>
+        </article>
+        <article class="walk-card">
+          <span class="walk-card__index">Follow</span>
+          <h3>Follow the process</h3>
+          <p>Click any topic to open its step-by-step flow, so you know what to prepare and how long each stage takes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: EMPLOYMENT TYPE -->
+  <section class="screen" data-screen="employment-type" data-step="2">
+    <button class="btn-back" data-nav="home">
+      <svg width="14" height="14" viewBox="0 0 16 16"><path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <div class="question-block">
+      <p class="eyebrow">Step 1 of 3</p>
+      <h2 class="question">What's your employment type?</h2>
+      <p class="question-sub">This narrows down which team can actually help.</p>
+    </div>
+    <div class="choice-grid choice-grid--two">
+      <button class="choice-card" data-nav="plantilla-team">
+        <span class="choice-card__title">Plantilla</span>
+        <span class="choice-card__desc">Permanent, contractual personnel.</span>
+      </button>
+      <button class="choice-card" data-nav="joco-team">
+        <span class="choice-card__title">JO / COS</span>
+        <span class="choice-card__desc">Job order and contract of service personnel.</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SCREEN 3a: PLANTILLA TEAM -->
+  <section class="screen" data-screen="plantilla-team" data-step="3">
+    <button class="btn-back" data-nav="employment-type">
+      <svg width="14" height="14" viewBox="0 0 16 16"><path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <div class="question-block">
+      <p class="eyebrow">Step 2 of 3</p>
+      <h2 class="question">Which team owns your concern?</h2>
+      <p class="question-sub">Pick the affairs team closest to what you need.</p>
+    </div>
+    <div class="choice-grid choice-grid--two">
+      <button class="choice-card" data-nav="result" data-team="hrmd">
+        <span class="choice-card__tag">Human Resource Management Division</span>
+        <span class="choice-card__title">HRMD Affairs</span>
+        <span class="choice-card__desc">Foreign travels, DOTCEA, IPAR &amp; IPCRs, trainings, scholarships.</span>
+      </button>
+      <button class="choice-card" data-nav="result" data-team="hrdd">
+        <span class="choice-card__tag">Human Resource Development Division</span>
+        <span class="choice-card__title">HRDD Affairs</span>
+        <span class="choice-card__desc">Foreign travels, DOTCEA, IPAR &amp; IPCRs, trainings, scholarships.</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SCREEN 3b: JO/COS TEAM -->
+  <section class="screen" data-screen="joco-team" data-step="3">
+    <button class="btn-back" data-nav="employment-type">
+      <svg width="14" height="14" viewBox="0 0 16 16"><path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <div class="question-block">
+      <p class="eyebrow">Step 2 of 3</p>
+      <h2 class="question">What's the concern about?</h2>
+      <p class="question-sub">Pick the category closest to what you need.</p>
+    </div>
+    <div class="choice-grid choice-grid--three">
+      <button class="choice-card" data-nav="result" data-team="recruitment">
+        <span class="choice-card__tag">Category</span>
+        <span class="choice-card__title">Recruitment</span>
+        <span class="choice-card__desc">Hiring, onboarding, and contract concerns.</span>
+      </button>
+      <button class="choice-card" data-nav="result" data-team="salary">
+        <span class="choice-card__tag">Category</span>
+        <span class="choice-card__title">Salary Claims</span>
+        <span class="choice-card__desc">Pay, claims, and compensation concerns.</span>
+      </button>
+      <button class="choice-card" data-nav="result" data-team="wellness">
+        <span class="choice-card__tag">Category</span>
+        <span class="choice-card__title">Wellness and Communication</span>
+        <span class="choice-card__desc">Welfare, communication, and related concerns.</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: RESULTS -->
+  <section class="screen" data-screen="result" data-step="4">
+    <button class="btn-back" id="resultBack">
+      <svg width="14" height="14" viewBox="0 0 16 16"><path d="M13 8H3M7 4 3 8l4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </button>
+    <div class="question-block">
+      <p class="eyebrow">Step 3 of 3</p>
+      <h2 class="question" id="resultTitle">Your focal persons</h2>
+      <p class="question-sub" id="resultSub">Reach out directly — they're expecting concerns like yours.</p>
+    </div>
+    <div class="people-grid" id="peopleGrid"></div>
+    <button class="btn btn--primary btn--center" data-nav="end">
+      That's what I needed
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </section>
+
+  <!-- SCREEN 5: END -->
+  <section class="screen screen--end" data-screen="end" data-step="4">
+    <div class="end-content">
+      <span class="end-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="40" height="40">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="16" cy="16" r="2.2" fill="currentColor"/>
+        </svg>
+      </span>
+      <p class="eyebrow">You're in focus</p>
+      <h2 class="headline headline--small">You found your person.</h2>
+      <p class="subhead">Save their contact details, and reach out whenever you're ready. They'll walk you through the rest.</p>
+      <button class="btn btn--primary" data-nav="home">
+        Back to start
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
